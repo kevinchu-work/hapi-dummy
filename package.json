@@ -1,0 +1,20 @@
+{
+  "name": "hapi-dummy",
+  "version": "1.0.0",
+  "description": "Testing of HAPI",
+  "main": "main.js",
+  "scripts": {
+    "docker": "docker build -t hapi . && docker run -it --rm -d -v $(pwd):/workspaces/hapi-dummy -p 3000:3000 --name hapi hapi bash && docker exec hapi yarn install && docker exec hapi yarn serve",
+    "serve": "nodemon ./main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Chu",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
